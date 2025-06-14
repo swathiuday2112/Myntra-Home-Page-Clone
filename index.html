@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Myntra</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.9.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.9.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.9.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+</head>
+<body>
+    <header>
+        <div class="logo_container">
+            <a href="#"><img src="/images/myntra_logo.svg" alt="myntra logo" class="img"></a>
+        </div>
+        <nav class="nav_bar">
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">Kids</a>
+            <a href="#">Home</a>
+            <a href="#">Beauty</a>
+			<a href="#">Genz</a>
+            <a href="#">Studio <sup>NEW</sup> </a>
+        </nav>
+
+		<!-- Mobile Menu Icon -->
+		<div class="menu-icon" onclick="toggleMobileMenu()">
+			&#9776;
+		</div>
+
+		<div class="mobile-nav" id="mobileNav">
+			<a href="#">MEN</a>
+			<a href="#">WOMEN</a>
+			<a href="#">KIDS</a>
+			<a href="#">HOME & LIVING</a>
+			<a href="#">BEAUTY</a>
+			<a href="#">STUDIO<sup>NEW</sup></a>
+		</div>
+
+        <div class="search_bar">
+            
+            <span class="material-symbols-outlined search_icon">search</span>
+            <input type="text" class="search_text" placeholder="Search for products, brands and more">
+        </div>
+        <div class="action_bar">
+            <div class="action_container">
+                <span class="material-symbols-outlined">person</span>
+                <div class="action_name">Profile</div>
+            </div>
+
+            <div class="action_container">
+                <span class="material-symbols-outlined">favorite</span>
+                <div class="action_name">Wishlist</div>
+            </div>
+
+            <div class="action_container">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                <div class="action_name">Bag</div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="slideshow-container">
+			<div class="slides-wrapper">
+				<div class="slide"><img src="images/banners/1.png" class="banner_img" alt="Slide 1"></div>
+				<div class="slide"><img src="images/banners/2.png" class="banner_img" alt="Slide 2"></div>
+				<div class="slide"><img src="images/banners/3.png" class="banner_img" alt="Slide 3"></div>
+				<div class="slide"><img src="images/banners/4.png" class="banner_img" alt="Slide 4"></div>
+			</div>
+
+			<div class="dots-container">
+				<span class="dot" onclick="currentSlide(0)"></span>
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+			</div>
+		</div>
+
+
+        <div class="category_heading">Medal worthy brands to bag</div>
+
+        <div class="multi-carousel">
+			<div class="carousel-track" id="carouselTrack">
+				<!-- Slides -->
+			</div>
+		</div>
+
+        <br>
+        <div class="category_heading">Shop by Category</div>
+
+        <div class="category_items">
+            <a href="#"><img src="images/categories/1.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/9.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/3.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/4.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/5.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/6.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/7.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/8.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/9.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/10.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/1.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/4.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/6.jpg" alt="sale offer" class="sale_item"></a>
+            <a href="#"><img src="images/categories/5.jpg" alt="sale offer" class="sale_item"></a>
+        </div>
+
+		<div class="bell-icon">
+			<span class="material-symbols-outlined">notifications</span>
+			<div class="tooltip">Latest Offers</div>
+		</div>
+
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_column">
+                <h3>Online Shopping</h3>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Kids</a>
+            </div>
+            <div class="footer_column">
+                <h3>Customer Policies</h3>
+                <a href="#">Contact Us</a>
+                <a href="#">FAQ</a>
+                <a href="#">T&C</a>
+            </div>
+            <div class="footer_column">
+                <h3>Useful Links</h3>
+                <a href="#">Blogs</a>
+                <a href="#">Careers</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+        <hr>
+        <div class="copyright">
+            © 2025 www.myntra.com. All rights reserved.
+        </div>
+    </footer>
+
+	<script>
+		function toggleMobileMenu() {
+			const mobileNav = document.getElementById('mobileNav');
+			mobileNav.classList.toggle('show');
+		}
+
+		let currentIndex = 0;
+		const slidesWrapper = document.querySelector('.slides-wrapper');
+		const slides = document.querySelectorAll('.slide');
+		const dots = document.querySelectorAll('.dot');
+		const TotalSlides = slides.length;
+
+		const firstClone = slides[0].cloneNode(true); // First slide cloned and appended to the end
+		slidesWrapper.appendChild(firstClone);
+
+		let actualSlidesCount = TotalSlides + 1; 
+
+		function updateDots(index) {
+			dots.forEach(dot => dot.classList.remove('active'));
+			dots[index % TotalSlides].classList.add('active');
+		}
+
+		function moveToSlide(index) {
+			slidesWrapper.style.transition = 'transform 0.5s ease-in-out';
+			slidesWrapper.style.transform = `translateX(-${index * 100}vw)`;
+			updateDots(index);
+			currentIndex = index;
+		}
+
+		function resetToFirstSlide() {
+			slidesWrapper.style.transition = 'none';
+			slidesWrapper.style.transform = `translateX(0vw)`;
+			currentIndex = 0;
+			updateDots(currentIndex);
+		}
+
+		function autoSlide() {
+			currentIndex++;
+			moveToSlide(currentIndex);
+			// Reset after the clone (i.e. after last visible slide)
+			if (currentIndex === TotalSlides) {
+				setTimeout(() => {
+					resetToFirstSlide();
+				}, 500); 
+			}
+		}
+
+		let slideTimer = setInterval(autoSlide, 3000);
+
+		function currentSlide(index) {
+			clearInterval(slideTimer);
+			moveToSlide(index);
+			slideTimer = setInterval(autoSlide, 3000);
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			moveToSlide(0);
+		});
+
+
+		const imageCount = 12;
+		const imagesPerSlide = 6;
+		const totalSlides = 2 // Math.ceil(imageCount / imagesPerSlide);
+		const track = document.getElementById('carouselTrack');
+
+		for (let i = 0; i < totalSlides; i++) {
+			const slide = document.createElement('div');
+			slide.className = 'carousel-slide';
+
+			for (let j = 0; j < imagesPerSlide; j++) {
+				const imgIndex = i * imagesPerSlide + j + 1;
+				// if (imgIndex > imageCount) break;
+
+				const link = document.createElement('a');
+				link.href = `#`; 
+
+				const img = document.createElement('img');
+				img.src = `images/img/${imgIndex}.png`;
+				img.alt = `Image ${imgIndex}`;
+
+				link.appendChild(img);
+				slide.appendChild(link);
+			}
+			track.appendChild(slide);
+		}
+
+		// Auto slide
+		let currentGroup = 0;
+		function moveCarousel() {
+			currentGroup = (currentGroup + 1) % totalSlides;
+			track.style.transform = `translateX(-${currentGroup * 100}%)`;
+		}
+
+		setInterval(moveCarousel, 3000);
+
+	</script>
+</body>
+</html>
