@@ -6,7 +6,6 @@ This is a responsive clone of the Myntra homepage, built using **HTML**, **CSS**
 - Responsive design for mobile, tablet, and desktop
 - Interactive navbar with dropdown and collapsible behavior
 - Carousel sliders with animation
-- Hover effects and animated bell icon
 - Firebase-hosted live demo
 
 ## 🛠️ Technologies Used
